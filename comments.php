@@ -28,7 +28,7 @@ echo "<h2>Comments</h2>";
 if ($result->num_rows > 0) {
 
     while($row = $result->fetch_assoc()) {
-        echo "<li>".$row['comment']."</li>";
+        echo "<li>".$row['comment']."<a href='delete.php?id=".$row['id']."'> | Delete</a></li>";
     }
 
 
