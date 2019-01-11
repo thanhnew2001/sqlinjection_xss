@@ -1,6 +1,7 @@
 <?php
 session_start();
-$conn = new mysqli("localhost", "root", "rmit", "security");
+include("db.php");
+$conn = new mysqli($HOST, $USER, $PASSWORD, $DB);
 
 /* check connection */
 if (mysqli_connect_errno()) {

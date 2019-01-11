@@ -4,8 +4,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
-
-$conn = new mysqli("localhost", "root", "rmit", "security");
+include("db.php");
+$conn = new mysqli($HOST, $USER, $PASSWORD, $DB);
 
 /* check connection */
 if (mysqli_connect_errno()) {

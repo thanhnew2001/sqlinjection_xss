@@ -1,5 +1,7 @@
 <?php
 session_start();
+require("db.php");
+
 echo $_SESSION['USERNAME'];
 
 if(!isset($_SESSION['USERNAME']) || $_SESSION['USERNAME']==''){
@@ -7,8 +9,7 @@ if(!isset($_SESSION['USERNAME']) || $_SESSION['USERNAME']==''){
 }
 
 
-$conn = new mysqli("localhost", "root", "rmit", "security");
-
+$conn = new mysqli($HOST, $USER, $PASSWORD, $DB);
 /* check connection */
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());
